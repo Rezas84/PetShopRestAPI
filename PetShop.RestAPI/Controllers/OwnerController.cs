@@ -63,10 +63,10 @@ namespace PetShop.RestAPI.Controllers
                 }
                 return BadRequest("Ops Action failed");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                return StatusCode(500, $"Process failed!!??:( Exception Message:{ex.Message}");
             }
         }
         [HttpPut("{id}")]

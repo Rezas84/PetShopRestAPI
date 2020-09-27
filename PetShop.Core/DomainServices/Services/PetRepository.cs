@@ -1,5 +1,6 @@
 ﻿using PetShop.Core.DomainServices.Interfaces;
 using PetShop.Infrastracture.Entity;
+using PetShopRestAPI.Infrastructure.Filter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -135,6 +136,26 @@ namespace PetShop.Core.DomainServices.Services
         public IEnumerable<Pet>FilterByName(string petName)
         {
             return DbContext.Pets?.Where(x => x.Name.ToLower().Contains(petName.ToLower()));
+        }
+        public FilterList<Pet> Filter(Filter filter)
+        {
+            var list = DbContext.Pets;
+            switch (filter.SearchField)
+            {
+                case"id":
+                    int.TryParse(filter.Search, out int id);
+                    list = list.Where(x => x.Id == id).ToList();
+                    break;
+                default:
+                    break;
+            }
+            var filterList = new FilterList<Pet>
+            {
+                filter = filter,
+                List = list,
+                TotalCount = list.Count
+            };
+            return filterList;
         }
     }
 }

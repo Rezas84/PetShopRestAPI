@@ -10,10 +10,15 @@ namespace PetShop.Core.DomainServices.Services
     {
         public bool Ownervalidator(Owner owner)
         {
-            if (owner == null
-                 || string.IsNullOrWhiteSpace(owner.FirstName)
-                 || string.IsNullOrWhiteSpace(owner.LastName))
-                return false;
+            if (owner == null)
+                throw new Exception("OwnerValidatorError: Owner is null");
+
+            if (string.IsNullOrWhiteSpace(owner.FirstName))
+                throw new Exception("OwnerValidatorError: OwnerFirstName is null");
+            if (string.IsNullOrWhiteSpace(owner.LastName))
+                throw new Exception("OwnerValidatorError: OwnerLastName is null");
+            if (!ValidEmail(owner.Email))
+                throw new Exception("OwnerValidatorError: Owneremail is not Valid");
             return true;
         }
     }

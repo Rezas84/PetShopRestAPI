@@ -1,4 +1,5 @@
 ﻿using PetShop.Infrastracture.Entity;
+using PetShopRestAPI.Infrastructure.Filter;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,5 +17,6 @@ namespace PetShop.Core.DomainServices.Interfaces
         IEnumerable<Pet> GetFiveCheapestPet();
         IEnumerable<Pet> SortAllPetsByPrice();
         IEnumerable<Pet> FilterByName(string petName);
+        FilterList<Pet> Filter(Filter filter);
     }
 }

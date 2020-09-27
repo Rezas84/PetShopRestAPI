@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.Core", "PetShop.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.Infrastracture.Entity", "PetShop.infrastracture.Data\PetShop.Infrastracture.Entity.csproj", "{833225AB-79B6-48BE-B48E-F67AB94D9268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShop.RestAPI", "PetShop.RestAPI\PetShop.RestAPI.csproj", "{E8A68BEA-ED92-493D-BA42-C7F34FE860A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.RestAPI", "PetShop.RestAPI\PetShop.RestAPI.csproj", "{E8A68BEA-ED92-493D-BA42-C7F34FE860A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShopRestAPI.Infrastructure.Filter", "PetShopRestAPI.Infrastructure.Filter\PetShopRestAPI.Infrastructure.Filter.csproj", "{3FDE0001-AC2D-47EE-8462-8D4A856D4A15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E8A68BEA-ED92-493D-BA42-C7F34FE860A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8A68BEA-ED92-493D-BA42-C7F34FE860A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8A68BEA-ED92-493D-BA42-C7F34FE860A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FDE0001-AC2D-47EE-8462-8D4A856D4A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDE0001-AC2D-47EE-8462-8D4A856D4A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDE0001-AC2D-47EE-8462-8D4A856D4A15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDE0001-AC2D-47EE-8462-8D4A856D4A15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{57272D6B-51CE-4948-B6DE-23C6879C56C7} = {75A26195-9E44-4A64-B19A-8CA4E087A291}
 		{833225AB-79B6-48BE-B48E-F67AB94D9268} = {D80C0D4F-A1EF-4EDA-807A-6508F2037A05}
 		{E8A68BEA-ED92-493D-BA42-C7F34FE860A2} = {C58652D7-FD9E-4FA6-BE0F-67F39D930C3F}
+		{3FDE0001-AC2D-47EE-8462-8D4A856D4A15} = {D80C0D4F-A1EF-4EDA-807A-6508F2037A05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A7E976FB-EE23-4396-A3B9-3B47AB81E3A0}

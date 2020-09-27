@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PetShop.Core.DomainServices.Interfaces;
 using PetShop.Infrastracture.Entity;
+using PetShopRestAPI.Infrastructure.Filter;
 
 namespace PetShop.RestAPI.Controllers
 {
@@ -53,12 +54,12 @@ namespace PetShop.RestAPI.Controllers
             }
 
         } 
-        [HttpGet("{petName}")]
-        public ActionResult<Pet> Get(string petName)
+        [HttpGet("Filter")]
+        public ActionResult<FilterList<Pet>> Filter([FromBody]Filter filter)
         {
             try
             {
-                var result = _petService.FilterByName(petName);
+                var result = _petService.Filter(filter);
                 if (result == null)
                     return NotFound();
                 return Ok(result);

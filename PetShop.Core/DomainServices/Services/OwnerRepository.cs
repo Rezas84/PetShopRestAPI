@@ -114,8 +114,7 @@ namespace PetShop.Core.DomainServices.Services
         public Owner GetById(int Id)
         {
             var model = DbContext.Owners?.FirstOrDefault(x => x.Id == Id);
-            if (model == null)
-                throw new System.Exception("Item Not Exists!");
+            
             return model;
         }
 

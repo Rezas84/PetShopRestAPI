@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PetShop.infrastracture.Data\PetShop.Infrastracture.Entity.csproj" />
+    <ProjectReference Include="..\PetShopRestAPI.Infrastructure.Filter\PetShopRestAPI.Infrastructure.Filter.csproj" />
   </ItemGroup>
 
 </Project>

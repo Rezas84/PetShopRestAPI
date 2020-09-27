@@ -1,5 +1,6 @@
 ﻿using PetShop.Core.DomainServices.Interfaces;
 using PetShop.Infrastracture.Entity;
+using PetShopRestAPI.Infrastructure.Filter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,6 +65,11 @@ namespace PetShop.Core.DomainServices.Services
         public IEnumerable<Pet> FilterByName(string petName)
         {
             return petRepository.FilterByName(petName);
+        }
+
+        public FilterList<Pet> Filter(Filter filter)
+        {
+            return petRepository.Filter(filter);
         }
     }
 }
