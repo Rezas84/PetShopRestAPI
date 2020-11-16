@@ -39,19 +39,19 @@ namespace PetShop.RestAPI
             Random rand = new Random();
             rand.NextBytes(secretBytes);
 
-            // Add JWT based authentication
+            //  JWT based authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateAudience = false,
-                    //ValidAudience = "TodoApiClient",
+                   
                     ValidateIssuer = false,
-                    //ValidIssuer = "TodoApi",
+                    
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(secretBytes),
-                    ValidateLifetime = true, //validate the expiration and not before values in the token
-                    ClockSkew = TimeSpan.FromMinutes(5) //5 minute tolerance for the expiration date
+                    ValidateLifetime = true, //validate the expiration 
+                    ClockSkew = TimeSpan.FromMinutes(6) //6 minute  for the expiration date
                 };
             });
 
@@ -122,9 +122,7 @@ namespace PetShop.RestAPI
             IPetRepository petRepository = (IPetRepository)serviceProvider.GetService(typeof(IPetRepository));
             IPetTypeRepository petTypeRepository = (IPetTypeRepository)serviceProvider.GetService(typeof(IPetTypeRepository));
             IOwnerRepository ownerRepository = (IOwnerRepository)serviceProvider.GetService(typeof(IOwnerRepository));
-            //petTypeRepository.Init();
-            //ownerRepository.Init();
-            /// petRepository.Init();
+            
 
         }
     }

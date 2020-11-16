@@ -10,7 +10,7 @@ namespace PetShop.RestAPI.Controllers
 {
     //comment
 
-    [Route("api/[controller]/[action]")]
+    [Route("[action]")]
     [ApiController]
     [Authorize]
     public class TestAutorize : ControllerBase

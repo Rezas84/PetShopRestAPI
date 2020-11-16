@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetShop.Core.DomainServices.Interfaces;
 using PetShop.Infrastracture.Entity;
@@ -13,6 +14,7 @@ namespace PetShop.RestAPI.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Administrator")]
     public class PetsController : ControllerBase
     {
         private readonly IPetService _petService;
@@ -21,6 +23,7 @@ namespace PetShop.RestAPI.Controllers
             _petService = petService;
         }
         [HttpGet]
+        
         public ActionResult<IEnumerable<Pet>> Get()
         {
             try

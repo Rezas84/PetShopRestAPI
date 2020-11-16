@@ -29,15 +29,16 @@ namespace PetShop.RestAPI.Controllers
         {
             var user = _userRepository.GetAll().FirstOrDefault(u => u.Username == model.UserName);
 
-            // check if username exists
+
+            //  if username is in database
             if (user == null)
                 return Unauthorized();
 
-            // check if password is correct
+            //  if password is correct
             if (!_authenticationService.VerifyPasswordHash(model.Password, user.PasswordHash, user.PasswordSalt))
                 return Unauthorized();
 
-            // Authentication successful
+            // Authentication Done
             return Ok(new
             {
                 username = user.Username,
